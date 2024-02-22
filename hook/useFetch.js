@@ -32,7 +32,7 @@ const useFetch = (endpoint, query) => {
                 setIsLoading(false);
             }
         } catch (error) {
-            console.error("hata oluştu", error.response.data.error.message);
+            console.error("hata oluştu", error.response);
             alert(`Hata Oluştu ${error}`);
             setIsLoading(false);
         }
