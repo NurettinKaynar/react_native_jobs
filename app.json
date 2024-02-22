@@ -28,7 +28,9 @@
     "updates": {
       "url": "https://u.expo.dev/775cb257-af1d-4ab1-9c67-167700313155"
     },
-    "android": {},
+    "android": {
+      "package": "com.nurettinkaynar.react_native_jobs"
+    },
     "ios": {}
   }
 }
