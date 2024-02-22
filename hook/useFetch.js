@@ -1,46 +1,53 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
-const rapidApiKey=process.env.EXPO_PUBLIC_API_URL
-const useFetch=(endpoint,query)=>{
-    const [data, setData] = useState([])
-    const [isloading, setIsLoading] = useState(false)
-    const [error, setError] = useState(null)
-const options = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': rapidApiKey,
-    'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
-  },
-  url: `https://jsearch.p.rapidapi.com/${endpoint}`,
-  params: {
-    ...query
-  },
+const useFetch = (endpoint, query) => {
+    const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
+
+    const JobSearchAxios = axios.create({
+        baseURL: "https://jsearch.p.rapidapi.com/"
+    });
+
+    // Add a request interceptor
+    JobSearchAxios.interceptors.request.use(
+        config => {
+            config.headers['X-RapidAPI-Key'] = process.env.EXPO_PUBLIC_RAPID_API_KEY;
+            config.headers['X-RapidAPI-Host'] = "jsearch.p.rapidapi.com";
+            return config;
+        },
+        error => {
+            // Do something with request error
+            return Promise.reject(error);
+        }
+    );
+
+    const fetchData = async () => {
+        setIsLoading(true);
+        try {
+            const res = await JobSearchAxios.get(endpoint,{params:query});
+            if (res.status === 200) {
+                setData(res.data.data);
+                setIsLoading(false);
+            }
+        } catch (error) {
+            console.error("hata oluştu", error.response.data.error.message);
+            alert(`Hata Oluştu ${error}`);
+            setIsLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const refetch = () => {
+        setIsLoading(true);
+        fetchData();
+    };
+
+    return { data, isLoading, error, refetch };
 };
 
-const fetchData=async()=>{
-    setIsLoading(true)
-    try {
-        const response=await axios.request(options);
-        setData(response.data.data)
-        setIsLoading(false)
-    } catch (error) {
-        console.log("hata var",error);
-        alert("Hata Oluştu")
-        setIsLoading(false)
-        
-    }
-}
-useEffect(() => {
-  fetchData()
-}, [])
-
-const refetch=()=>{
-    setIsLoading(true)
-    fetchData()
-}
-
-return {data,isloading,error,refetch}
-}
-
-export default useFetch
+export default useFetch;
