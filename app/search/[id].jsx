@@ -90,13 +90,13 @@ const JobSearch = () => {
                     <>
                         <View style={styles.container}>
                             <Text style={styles.searchTitle}>{params.id}</Text>
-                            <Text style={styles.noOfSearchedJobs}>İş Fırsatları</Text>
+                            <Text style={styles.noOfSearchedJobs}>Job Opportunity</Text>
                         </View>
                         <View style={styles.loaderContainer}>
                             {searchLoader ? (
                                 <ActivityIndicator size='large' color={COLORS.primary} />
                             ) : searchError && (
-                                <Text>Bir şeyler hatalı gitti</Text>
+                                <Text>Something went wrong</Text>
                             )}
                         </View>
                     </>

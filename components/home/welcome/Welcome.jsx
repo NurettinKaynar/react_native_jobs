@@ -21,8 +21,8 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
   return (
     <View>
       <View style={styles.container}>
-        <Text style={styles.userName}>Merhaba</Text>
-        <Text style={styles.welcomeMessage}>Sana uygun en iyi işi bul!</Text>
+        <Text style={styles.userName}>Hello</Text>
+        <Text style={styles.welcomeMessage}>Find the best job for you!</Text>
       </View>
 
       <View style={styles.searchContainer}>
@@ -31,7 +31,7 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
             style={styles.searchInput}
             value={searchTerm}
             onChangeText={(text) => setSearchTerm(text)}
-            placeholder='Ne tür bir iş arıyorsun?'
+            placeholder='What kind of job are you looking for?'
           />
         </View>
 

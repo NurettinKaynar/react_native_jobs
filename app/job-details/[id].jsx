@@ -39,23 +39,23 @@ const JobDetails = () => {
 
   const displayTabContent = () => {
     switch (activeTab) {
-      case "Nitelikler":
+      case "Qualifications":
         return (
           <Specifics
-            title='Nitelikler'
+            title='Qualifications'
             points={data[0].job_highlights?.Qualifications ?? ["N/A"]}
           />
         );
 
-      case "Hakkında":
+      case "About":
         return (
           <JobAbout info={data[0].job_description ?? "No data provided"} />
         );
 
-      case "Sorumluluklar":
+      case "Responsibilities":
         return (
           <Specifics
-            title='Sorumluluklar'
+            title='Responsibilities'
             points={data[0].job_highlights?.Responsibilities ?? ["N/A"]}
           />
         );

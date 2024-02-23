@@ -20,9 +20,9 @@ const Popularjobs = () => {
   return (
     <View style={styles.container} >
       <View style={styles.header}>
-        <Text style={styles.headerTitle} >Popüler İşler</Text>
+        <Text style={styles.headerTitle} >Popular Jobs</Text>
         <TouchableOpacity>
-          <Text style={styles.headerBtn}>Tümünü Göster</Text>
+          <Text style={styles.headerBtn}>Show All</Text>
         </TouchableOpacity>
       </View>
 
@@ -31,7 +31,7 @@ const Popularjobs = () => {
           isLoading?
           <ActivityIndicator/>
           :error?(
-            <Text>Bir Sorun Var</Text>
+            <Text>Something's wrong</Text>
           )
           : (
            
