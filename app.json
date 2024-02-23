@@ -7,8 +7,8 @@
     "plugins": [
       "expo-router"
     ],
-    "name": "react_native_jobs",
-    "slug": "react_native_jobs",
+    "name": "JobFy",
+    "slug": "jobFy",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "cover",
@@ -29,7 +29,7 @@
       "url": "https://u.expo.dev/775cb257-af1d-4ab1-9c67-167700313155"
     },
     "android": {
-      "package": "com.nurettinkaynar.react_native_jobs"
+      "package": "com.nurettinkaynar.jobfy"
     },
     "ios": {}
   }
