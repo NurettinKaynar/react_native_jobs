@@ -19,14 +19,14 @@
         "origin": false
       },
       "eas": {
-        "projectId": "775cb257-af1d-4ab1-9c67-167700313155"
+        "projectId": "0d3a9667-ea38-4a70-adf2-6963cb57b6d5"
       }
     },
     "runtimeVersion": {
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/775cb257-af1d-4ab1-9c67-167700313155"
+      "url": "https://u.expo.dev/0d3a9667-ea38-4a70-adf2-6963cb57b6d5"
     },
     "android": {
       "package": "com.nurettinkaynar.jobfy"
