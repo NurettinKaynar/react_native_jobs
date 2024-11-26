@@ -13,8 +13,8 @@ const useFetch = (endpoint, query) => {
   // Add a request interceptor
   JobSearchAxios.interceptors.request.use(
     (config) => {
-      config.headers["X-RapidAPI-Key"] = process.env.EXPO_PUBLIC_RAPID_API_KEY;
-      config.headers["X-RapidAPI-Host"] = "jsearch.p.rapidapi.com";
+      config.headers["x-rapidapi-key"] = process.env.EXPO_PUBLIC_RAPID_API_KEY;
+      config.headers["x-rapidapi-host"] = "jsearch.p.rapidapi.com";
       return config;
     },
     (error) => {
